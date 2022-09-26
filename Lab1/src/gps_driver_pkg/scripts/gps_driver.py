@@ -32,8 +32,7 @@ if __name__ == '__main__':
     serial_port = sys.argv[1]
     serial_baud = rospy.get_param('~baudrate',4800)
     sampling_rate = rospy.get_param('~sampling_rate',5.0)
-    #offset = rospy.get_param('~atm_offset',12.121) # in meter ??
-    latitude_deg = rospy.get_param('~latitude',41.526) # deg 41.526 N is Woods Hole
+    latitude_deg = rospy.get_param('~latitude',41.526) 
     
     port = serial.Serial(serial_port, serial_baud, timeout=3.)
     #port = serial.Serial('/dev/pts/3', 4800, timeout=1.0)

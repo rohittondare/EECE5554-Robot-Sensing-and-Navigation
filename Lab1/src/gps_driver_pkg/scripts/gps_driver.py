@@ -28,7 +28,8 @@ def gpggaTime_To_SecNanosec(satTime):
 if __name__ == '__main__':
     SENSOR_NAME = "gpsPuck"
     rospy.init_node('gps')
-    serial_port = rospy.get_param('~port','/dev/pts/3')
+    print(sys.argv[1])
+    serial_port = sys.argv[1]
     serial_baud = rospy.get_param('~baudrate',4800)
     sampling_rate = rospy.get_param('~sampling_rate',5.0)
     #offset = rospy.get_param('~atm_offset',12.121) # in meter ??
@@ -87,8 +88,8 @@ if __name__ == '__main__':
                     utmMsessages.header.stamp.secs = seconds
                     utmMsessages.header.stamp.nsecs = nanoseconds
                     utmMsessages.header.frame_id = 'GPS1_Frame'
-                    utmMsessages.latitude = latitude
-                    utmMsessages.longitude = longitude
+                    utmMsessages.latitude = northSouth*latitude
+                    utmMsessages.longitude = eastWest*longitude
                     utmMsessages.altitude = altitude
                     utmMsessages.UTM_easting = (UTM[0])
                     utmMsessages.UTM_northing = (UTM[1])

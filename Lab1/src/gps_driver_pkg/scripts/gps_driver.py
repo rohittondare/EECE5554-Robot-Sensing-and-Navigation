@@ -19,7 +19,7 @@ def gpggaTime_To_SecNanosec(satTime):
     hours = int(satTime/10000)
     mins = int((satTime-hours*10000)/100)
     seconds = int(satTime-hours*10000-mins*100)
-    nanoseconds = int((satTime-int(satTime))*10**9)
+    nanoseconds = float((satTime-int(satTime))*10**9)
     totalSeconds = int(hours*3600+mins*60+seconds)
     print("hours:",hours," mins",mins," seconds",seconds," total",totalSeconds," nano",nanoseconds)
     return(nanoseconds,totalSeconds)

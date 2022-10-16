@@ -85,8 +85,8 @@ if __name__ == '__main__':
                     #UTM = utm.from_latlon(lat,lon)	
                     print("qwqwewewwe")
                     utmMsessages = gps_msg()
-                    utmMsessages.header.stamp.secs = seconds
-                    utmMsessages.header.stamp.nsecs = nanoseconds
+                    utmMsessages.header.stamp.secs = int(seconds)
+                    utmMsessages.header.stamp.nsecs = int(nanoseconds)
                     utmMsessages.header.frame_id = 'GPS1_Frame'
                     utmMsessages.latitude = northSouth*latitude
                     utmMsessages.longitude = eastWest*longitude
@@ -95,7 +95,7 @@ if __name__ == '__main__':
                     utmMsessages.UTM_northing = (UTM[1])
                     utmMsessages.Zone = UTM[2]
                     utmMsessages.Letter = UTM[3]
-                    utmMsessages.Quality = quality
+                    utmMsessages.Quality = int(quality)
                     
                     #print(utmMsessages.header.stamp.secs)
                     #print("xxx")

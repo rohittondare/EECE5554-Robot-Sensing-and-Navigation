@@ -1,0 +1,8 @@
+prefix=/home/rohit/Tests/eece5554/LAB1/devel
+
+Name: gps_driver_pkg
+Description: Description of gps_driver_pkg
+Version: 0.0.0
+Cflags: -I/home/rohit/Tests/eece5554/LAB1/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
